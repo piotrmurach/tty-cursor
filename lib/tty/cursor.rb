@@ -44,10 +44,19 @@ module TTY
       ECMA_CSI + 'u'
     end
 
-    # Current cursor position
+    # Query cursor current position
     # @api public
     def current
       ECMA_CSI + '6n'
+    end
+
+    # Set the cursor absolute position
+    # @param [Integer] row
+    # @param [Integer] column
+    # @api public
+    def move_to(row = nil, column = nil)
+      return ECMA_CSI + 'H' if row.nil? && column.nil?
+      ECMA_CSI + "#{column + 1};#{row + 1}H"
     end
 
     # Move cursor relative to its current position
