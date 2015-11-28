@@ -55,13 +55,43 @@ print cursor.move(5, 2)
 
 ## Interface
 
+### move_to(x, y)
+
+Set the cursor absolute position where subsequent text will begin.
+
+If no row/column parameters are provided, the cursor will move to the home position, at the upper left of the screen:
+
+```ruby
+cursor.move_to
+```
+
 ### move(x, y)
 
 Move cursor by x columns and y rows relative to its current position.
 
 ### up(count)
 
-Move cursor up by a specific number of lines. Default is `1`.
+Move the cursor up by `count` rows; the default count is `1`.
+
+### down(count)
+
+Move the cursor down by `count` rows; the default count is `1`.
+
+### forward(count)
+
+Move the cursor forward by `count` columns; the default count is `1`.
+
+### backward(count)
+
+Move the cursor backward by COUNT columns; the default count is `1`.
+
+### save
+
+Save current cursor position.
+
+### restore
+
+Restore cursor position after a save cursor was called.
 
 ## Contributing
 
