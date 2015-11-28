@@ -33,7 +33,30 @@ Or install it yourself as:
 
     $ gem install tty-cursor
 
-## Usage
+## Contents
+
+* [1. Usage](#1-usage)
+* [2. Interface](#2-interface)
+  * [2.1 Cursor control](#21-cursor-control)
+    * [2.1.1 move_to(x, y)](#211-move_tox-y)
+    * [2.1.2 move(x, y)](#212-movex-y)
+    * [2.1.3 up(count)](#213-upcount)
+    * [2.1.4 down(count)](#214-downcount)
+    * [2.1.5 forward(count)](#215-forwardcount)
+    * [2.1.6 backward(count)](#216-backwardcount)
+    * [2.1.7 save](#217-save)
+    * [2.1.8 restore](#218-restore)
+    * [2.1.9 current](#219-current)
+    * [2.1.10 show](#2110-show)
+    * [2.1.11 hide](#2111-hide)
+  * [2.2 Clearing text](#22-clearing-text)
+    * [2.2.1 clear_line](#221-clear_line)
+    * [2.2.2 clear_lines(count, direction)](#222-clear_linescount-direction)
+    * [2.2.3 clear_screen_down](#223-clear_screen_down)
+    * [2.2.4 clear_screen_up](#224-clear_screen_up)
+    * [2.2.5 clear_screen](#225-clear_screen)
+
+## 1. Usage
 
 **TTY::Cursor** is just a module hence you can reference it for later like so:
 
@@ -53,11 +76,11 @@ or simple call `move` to move cursor relative to current position:
 print cursor.move(5, 2)
 ```
 
-## Interface
+## 2. Interface
 
-### Cursor control
+### 2.1 Cursor control
 
-### move_to(x, y)
+#### 2.1.1 move_to(x, y)
 
 Set the cursor absolute position where subsequent text will begin.
 
@@ -67,53 +90,53 @@ If no row/column parameters are provided, the cursor will move to the home posit
 cursor.move_to
 ```
 
-### move(x, y)
+#### 2.1.2 move(x, y)
 
 Move cursor by x columns and y rows relative to its current position.
 
-### up(count)
+#### 2.1.3 up(count)
 
 Move the cursor up by `count` rows; the default count is `1`.
 
-### down(count)
+#### 2.1.4 down(count)
 
 Move the cursor down by `count` rows; the default count is `1`.
 
-### forward(count)
+#### 2.1.5 forward(count)
 
 Move the cursor forward by `count` columns; the default count is `1`.
 
-### backward(count)
+#### 2.1.6 backward(count)
 
 Move the cursor backward by COUNT columns; the default count is `1`.
 
-### save
+#### 2.1.7 save
 
 Save current cursor position.
 
-### restore
+#### 2.1.8 restore
 
 Restore cursor position after a save cursor was called.
 
-### current
+#### 2.1.9 current
 
 Query current cursor position
 
-### show
+#### 2.1.10 show
 
 Show cursor
 
-### hide
+#### 2.1.11 hide
 
 Hide cursor
 
-### Clearing text
+### 2.2 Clearing text
 
-#### clear_line
+#### 2.2.1 clear_line
 
 Erase the entire current line.
 
-#### clear_lines(count, direction)
+#### 2.2.2 clear_lines(count, direction)
 
 Erase `count` rows in given direction; the default direction is `:up`.
 
