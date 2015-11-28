@@ -57,23 +57,25 @@ module TTY
     #
     # @api public
     def move(x, y)
-      (x < 0 ? left(-x) : (x > 0 ? right(x) : '')) +
-      (y < 0 ? down(-y) : (y > 0 ? up(y) : ''))
+      (x < 0 ? cursor_left(-x) : (x > 0 ? cursor_right(x) : '')) +
+      (y < 0 ? cursor_down(-y) : (y > 0 ? cursor_up(y) : ''))
     end
 
-    # Move cursor up by number of lines
+    # Move cursor cursor_up by number of lines
     #
     # @param [Integer] count
     #
     # @api public
-    def up(count = nil)
+    def cursor_up(count = nil)
       ECMA_CSI + "#{(count || 1)}A"
     end
 
     # Move cursor down by number of lines
     #
+    # @param [Integer] count
+    #
     # @api public
-    def down(count = nil)
+    def cursor_down(count = nil)
       ECMA_CSI + "#{(count || 1)}B"
     end
 
@@ -81,18 +83,18 @@ module TTY
     #
     # @api public
     def move_start
-      left(1000)
+      cursor_left(1000)
     end
 
     # @param [Integer] count
     #   how far to go left
     # @api public
-    def left(count = nil)
+    def cursor_left(count = nil)
       ECMA_CSI + "#{count || 1}D"
     end
 
     # @api public
-    def right(count = nil)
+    def cursor_right(count = nil)
       ECMA_CSI + "#{count || 1}C"
     end
 
@@ -122,20 +124,20 @@ module TTY
     # @api public
     def clear_lines(amount, direction = :up)
       amount.times.reduce('') do |acc|
-        dir = direction == :up ? up : down
+        dir = direction == :up ? cursor_up : cursor_down
         acc << dir + clear_line
       end
     end
 
     # Clear screen down from current position
     # @api public
-    def clear_down
+    def clear_screen_down
       ECMA_CSI + 'J'
     end
 
     # Clear screen up from current position
     # @api public
-    def clear_up
+    def clear_screen_up
       ECMA_CSI + '1J'
     end
   end # Cursor

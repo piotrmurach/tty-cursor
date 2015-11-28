@@ -24,11 +24,11 @@ RSpec.describe TTY::Cursor, '#clear_lines' do
   end
 
   it "clears screen down" do
-    expect(cursor.clear_down).to eq("\e[J")
+    expect(cursor.clear_screen_down).to eq("\e[J")
   end
 
   it "clears screen up" do
-    expect(cursor.clear_up).to eq("\e[1J")
+    expect(cursor.clear_screen_up).to eq("\e[1J")
   end
 
   it "clears line" do
