@@ -19,6 +19,10 @@ RSpec.describe TTY::Cursor do
     expect(cursor.restore).to eq("\e[u")
   end
 
+  it "gets current cursor positoin" do
+    expect(cursor.current).to eq("\e[6n")
+  end
+
   it "moves cursor up default by 1 line" do
     expect(cursor.cursor_up).to eq("\e[1A")
   end
