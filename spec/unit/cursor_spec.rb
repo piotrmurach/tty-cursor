@@ -58,4 +58,18 @@ RSpec.describe TTY::Cursor do
   it "moves cursor right by 5 lines" do
     expect(cursor.forward(5)).to eq("\e[5C")
   end
+
+  it "moves cursor to next line" do
+    expect(cursor.next_line).to eq("\e[E")
+  end
+
+  it "moves cursor to previous line" do
+    expect(cursor.prev_line).to eq("\e[F")
+  end
+
+  it "hides cursor for the duration of block call" do
+    stream = StringIO.new
+    cursor.invisible(stream) { }
+    expect(stream.string).to eq("\e[?25l\e[?25h")
+  end
 end
