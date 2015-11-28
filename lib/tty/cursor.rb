@@ -129,18 +129,19 @@ module TTY
 
     # Clear a number of lines
     #
-    # @param [Integer] amount
+    # @param [Integer] count
     #   the number of lines to clear
     # @param [Symbol] :direction
     #   the direction to clear, default :up
     #
     # @api public
-    def clear_lines(amount, direction = :up)
-      amount.times.reduce('') do |acc|
+    def clear_lines(count, direction = :up)
+      count.times.reduce('') do |acc|
         dir = direction == :up ? up : down
         acc << dir + clear_line
       end
     end
+    alias_method :clear_rows, :clear_lines
 
     # Clear screen down from current position
     # @api public
@@ -152,6 +153,12 @@ module TTY
     # @api public
     def clear_screen_up
       ECMA_CSI + '1J'
+    end
+
+    # Clear the screen with the background colour and moves the cursor to home
+    # @api public
+    def clear_screen
+      ECMA_CSI + '2J'
     end
   end # Cursor
 end # TTY
