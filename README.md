@@ -47,8 +47,11 @@ Or install it yourself as:
     * [2.1.7 save](#217-save)
     * [2.1.8 restore](#218-restore)
     * [2.1.9 current](#219-current)
-    * [2.1.10 show](#2110-show)
-    * [2.1.11 hide](#2111-hide)
+    * [2.1.10 next_line](#2110-next_line)
+    * [2.1.11 prev_line](#2111-prev_line)
+    * [2.1.12 show](#2112-show)
+    * [2.1.13 hide](#2113-hide)
+    * [2.1.14 invisible(stream)](#2114-invisiblestream)
   * [2.2 Clearing text](#22-clearing-text)
     * [2.2.1 clear_line](#221-clear_line)
     * [2.2.2 clear_lines(count, direction)](#222-clear_linescount-direction)
@@ -122,13 +125,35 @@ Restore cursor position after a save cursor was called.
 
 Query current cursor position
 
-#### 2.1.10 show
+#### 2.1.10 next_line
+
+Move the cursor to the next line.
+
+#### 2.1.11 prev_line
+
+Move the cursor to the previous line.
+
+#### 2.1.12 show
 
 Show cursor
 
-#### 2.1.11 hide
+#### 2.1.13 hide
 
 Hide cursor
+
+#### 2.1.14 invisible(stream)
+
+To hide cursor for the duration of the block do:
+
+```ruby
+cursor.invisible { ... }
+```
+
+By default standard output will be used but you can change that by passing a different stream that responds to `print` call:
+
+```ruby
+cursor.invisible($stderr) { .... }
+```
 
 ### 2.2 Clearing text
 
@@ -144,21 +169,21 @@ Erase `count` rows in given direction; the default direction is `:up`.
 cursor.clear_lines(5, :down)
 ```
 
-#### clear_screen_down
+#### 2.2.3 clear_screen_down
 
 Erase the screen from the current line down to the bottom of the screen.
 
-#### clear_screen_up
+#### 2.2.4 clear_screen_up
 
 Erase the screen from the current line up to the top of the screen.
 
-#### clear_screen
+#### 2.2.5 clear_screen
 
 Erase the screen with the background colour and moves the cursor to home.
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/tty-cursor/fork )
+1. Fork it ( https://github.com/peter-murach/tty-cursor/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
