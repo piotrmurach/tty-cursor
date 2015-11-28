@@ -66,46 +66,50 @@ module TTY
     #
     # @api public
     def move(x, y)
-      (x < 0 ? cursor_left(-x) : (x > 0 ? cursor_right(x) : '')) +
-      (y < 0 ? cursor_down(-y) : (y > 0 ? cursor_up(y) : ''))
+      (x < 0 ? backward(-x) : (x > 0 ? forward(x) : '')) +
+      (y < 0 ? down(-y) : (y > 0 ? up(y) : ''))
     end
 
-    # Move cursor cursor_up by number of lines
+    # Move cursor up by number of lines
     #
     # @param [Integer] count
     #
     # @api public
-    def cursor_up(count = nil)
+    def up(count = nil)
       ECMA_CSI + "#{(count || 1)}A"
     end
+    alias_method :cursor_up, :up
 
     # Move cursor down by number of lines
     #
     # @param [Integer] count
     #
     # @api public
-    def cursor_down(count = nil)
+    def down(count = nil)
       ECMA_CSI + "#{(count || 1)}B"
     end
+    alias_method :cursor_down, :down
 
     # Move to start of the line
     #
     # @api public
     def move_start
-      cursor_left(1000)
+      backward(1000)
     end
 
     # @param [Integer] count
     #   how far to go left
     # @api public
-    def cursor_left(count = nil)
+    def backward(count = nil)
       ECMA_CSI + "#{count || 1}D"
     end
+    alias_method :cursor_backward, :backward
 
     # @api public
-    def cursor_right(count = nil)
+    def forward(count = nil)
       ECMA_CSI + "#{count || 1}C"
     end
+    alias_method :cursor_forward, :forward
 
     # @api public
     def next_line
@@ -133,7 +137,7 @@ module TTY
     # @api public
     def clear_lines(amount, direction = :up)
       amount.times.reduce('') do |acc|
-        dir = direction == :up ? cursor_up : cursor_down
+        dir = direction == :up ? up : down
         acc << dir + clear_line
       end
     end

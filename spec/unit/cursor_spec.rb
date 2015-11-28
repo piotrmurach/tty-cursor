@@ -24,19 +24,19 @@ RSpec.describe TTY::Cursor do
   end
 
   it "moves cursor up default by 1 line" do
-    expect(cursor.cursor_up).to eq("\e[1A")
+    expect(cursor.up).to eq("\e[1A")
   end
 
   it "moves cursor up by 5 lines" do
-    expect(cursor.cursor_up(5)).to eq("\e[5A")
+    expect(cursor.up(5)).to eq("\e[5A")
   end
 
   it "moves cursor down default by 1 line" do
-    expect(cursor.cursor_down).to eq("\e[1B")
+    expect(cursor.down).to eq("\e[1B")
   end
 
   it "moves cursor down by 5 lines" do
-    expect(cursor.cursor_down(5)).to eq("\e[5B")
+    expect(cursor.down(5)).to eq("\e[5B")
   end
 
   it "moves to line start" do
@@ -44,18 +44,18 @@ RSpec.describe TTY::Cursor do
   end
 
   it "moves cursorleft by 1 line default" do
-    expect(cursor.cursor_left).to eq("\e[1D")
+    expect(cursor.backward).to eq("\e[1D")
   end
 
   it "moves cursor left by 5" do
-    expect(cursor.cursor_left(5)).to eq("\e[5D")
+    expect(cursor.backward(5)).to eq("\e[5D")
   end
 
   it "moves cursor right by 1 line default" do
-    expect(cursor.cursor_right).to eq("\e[1C")
+    expect(cursor.forward).to eq("\e[1C")
   end
 
   it "moves cursor right by 5 lines" do
-    expect(cursor.cursor_right(5)).to eq("\e[5C")
+    expect(cursor.forward(5)).to eq("\e[5C")
   end
 end
