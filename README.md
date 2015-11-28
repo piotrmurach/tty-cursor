@@ -55,6 +55,8 @@ print cursor.move(5, 2)
 
 ## Interface
 
+### Cursor control
+
 ### move_to(x, y)
 
 Set the cursor absolute position where subsequent text will begin.
@@ -92,6 +94,44 @@ Save current cursor position.
 ### restore
 
 Restore cursor position after a save cursor was called.
+
+### current
+
+Query current cursor position
+
+### show
+
+Show cursor
+
+### hide
+
+Hide cursor
+
+### Clearing text
+
+#### clear_line
+
+Erase the entire current line.
+
+#### clear_lines(count, direction)
+
+Erase `count` rows in given direction; the default direction is `:up`.
+
+```ruby
+cursor.clear_lines(5, :down)
+```
+
+#### clear_screen_down
+
+Erase the screen from the current line down to the bottom of the screen.
+
+#### clear_screen_up
+
+Erase the screen from the current line up to the top of the screen.
+
+#### clear_screen
+
+Erase the screen with the background colour and moves the cursor to home.
 
 ## Contributing
 
