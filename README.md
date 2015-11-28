@@ -67,10 +67,10 @@ Or install it yourself as:
 cursor = TTY::Cursor
 ```
 
-and then to move cursor 5 lines up and 2 rows to the right do:
+and then to move cursor 5 rows up and 2 columns forward do:
 
 ```ruby
-print cursor.up(5) + cursor.right(2)
+print cursor.up(5) + cursor.forward(2)
 ```
 
 or simple call `move` to move cursor relative to current position:
