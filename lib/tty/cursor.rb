@@ -136,9 +136,9 @@ module TTY
     #
     # @api public
     def clear_lines(count, direction = :up)
-      count.times.reduce('') do |acc|
+      count.times.reduce('') do |acc, i|
         dir = direction == :up ? up : down
-        acc << dir + clear_line
+        acc << clear_line + ((i == count - 1) ? '' : dir)
       end
     end
     alias_method :clear_rows, :clear_lines
