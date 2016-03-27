@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = [""]
   spec.summary       = %q{Terminal cursor movement and manipulation of cursor properties such as visibility.}
   spec.description   = %q{The purpose of this library is to help move terminal cursor around using intuitive commands and help in clearing terminal screen.}
-  spec.homepage       = 'http://peter-murach.github.io/tty/'
+  spec.homepage       = 'http://piotrmurach.github.io/tty/'
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

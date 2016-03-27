@@ -1,21 +1,21 @@
 # TTY::Cursor
 [![Gem Version](https://badge.fury.io/rb/tty-cursor.svg)][gem]
-[![Build Status](https://secure.travis-ci.org/peter-murach/tty-cursor.svg?branch=master)][travis]
-[![Code Climate](https://codeclimate.com/github/peter-murach/tty-cursor/badges/gpa.svg)][codeclimate]
-[![Coverage Status](https://coveralls.io/repos/peter-murach/tty-cursor/badge.svg)][coverage]
-[![Inline docs](http://inch-ci.org/github/peter-murach/tty-cursor.svg?branch=master)][inchpages]
+[![Build Status](https://secure.travis-ci.org/piotrmurach/tty-cursor.svg?branch=master)][travis]
+[![Code Climate](https://codeclimate.com/github/piotrmurach/tty-cursor/badges/gpa.svg)][codeclimate]
+[![Coverage Status](https://coveralls.io/repos/piotrmurach/tty-cursor/badge.svg)][coverage]
+[![Inline docs](http://inch-ci.org/github/piotrmurach/tty-cursor.svg?branch=master)][inchpages]
 
 [gem]: http://badge.fury.io/rb/tty-cursor
-[travis]: http://travis-ci.org/peter-murach/tty-cursor
-[codeclimate]: https://codeclimate.com/github/peter-murach/tty-cursor
-[coverage]: https://coveralls.io/r/peter-murach/tty-cursor
-[inchpages]: http://inch-ci.org/github/peter-murach/tty-cursor
+[travis]: http://travis-ci.org/piotrmurach/tty-cursor
+[codeclimate]: https://codeclimate.com/github/piotrmurach/tty-cursor
+[coverage]: https://coveralls.io/r/piotrmurach/tty-cursor
+[inchpages]: http://inch-ci.org/github/piotrmurach/tty-cursor
 
 > Terminal cursor movement and manipulation of cursor properties such as visibility.
 
 The purpose of this library is to help move terminal cursor around using intuitive commands and help in clearing terminal screen.
 
-**TTY::Cursor** provides independent cursor movement component for [TTY](https://github.com/peter-murach/tty) toolkit.
+**TTY::Cursor** provides independent cursor movement component for [TTY](https://github.com/piotrmurach/tty) toolkit.
 
 ## Installation
 
@@ -183,7 +183,7 @@ Erase the screen with the background colour and moves the cursor to home.
 
 ## Contributing
 
-1. Fork it ( https://github.com/peter-murach/tty-cursor/fork )
+1. Fork it ( https://github.com/piotrmurach/tty-cursor/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -191,4 +191,4 @@ Erase the screen with the background colour and moves the cursor to home.
 
 ## Copyright
 
-Copyright (c) 2015 Piotr Murach. See LICENSE for further details.
+Copyright (c) 2015-2016 Piotr Murach. See LICENSE for further details.
