@@ -1,10 +1,11 @@
-# TTY::Cursor
+# TTY::Cursor [![Gitter](https://badges.gitter.im/Join%20Chat.svg)][gitter]
 [![Gem Version](https://badge.fury.io/rb/tty-cursor.svg)][gem]
 [![Build Status](https://secure.travis-ci.org/piotrmurach/tty-cursor.svg?branch=master)][travis]
 [![Code Climate](https://codeclimate.com/github/piotrmurach/tty-cursor/badges/gpa.svg)][codeclimate]
 [![Coverage Status](https://coveralls.io/repos/piotrmurach/tty-cursor/badge.svg)][coverage]
 [![Inline docs](http://inch-ci.org/github/piotrmurach/tty-cursor.svg?branch=master)][inchpages]
 
+[gitter]: https://gitter.im/piotrmurach/tty
 [gem]: http://badge.fury.io/rb/tty-cursor
 [travis]: http://travis-ci.org/piotrmurach/tty-cursor
 [codeclimate]: https://codeclimate.com/github/piotrmurach/tty-cursor
