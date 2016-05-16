@@ -19,7 +19,7 @@ RSpec.describe TTY::Cursor do
     expect(cursor.restore).to eq("\e[u")
   end
 
-  it "gets current cursor positoin" do
+  it "gets current cursor position" do
     expect(cursor.current).to eq("\e[6n")
   end
 
