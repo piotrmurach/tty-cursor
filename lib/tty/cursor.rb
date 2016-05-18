@@ -118,7 +118,7 @@ module TTY
 
     # @api public
     def prev_line
-      ECMA_CSI + 'F'
+      ECMA_CSI + 'A' + ECMA_CSI + '1G'
     end
 
     # Clear current line

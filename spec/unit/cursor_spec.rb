@@ -19,7 +19,7 @@ RSpec.describe TTY::Cursor do
     expect(cursor.restore).to eq("\e[u")
   end
 
-  it "gets current cursor positoin" do
+  it "gets current cursor position" do
     expect(cursor.current).to eq("\e[6n")
   end
 
@@ -64,7 +64,7 @@ RSpec.describe TTY::Cursor do
   end
 
   it "moves cursor to previous line" do
-    expect(cursor.prev_line).to eq("\e[F")
+    expect(cursor.prev_line).to eq("\e[A\e[1G")
   end
 
   it "hides cursor for the duration of block call" do
