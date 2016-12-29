@@ -1,6 +1,7 @@
 # TTY::Cursor [![Gitter](https://badges.gitter.im/Join%20Chat.svg)][gitter]
 [![Gem Version](https://badge.fury.io/rb/tty-cursor.svg)][gem]
 [![Build Status](https://secure.travis-ci.org/piotrmurach/tty-cursor.svg?branch=master)][travis]
+[![Build status](https://ci.appveyor.com/api/projects/status/4k7cd69jscwg7fl7?svg=true)][appveyor]
 [![Code Climate](https://codeclimate.com/github/piotrmurach/tty-cursor/badges/gpa.svg)][codeclimate]
 [![Coverage Status](https://coveralls.io/repos/piotrmurach/tty-cursor/badge.svg)][coverage]
 [![Inline docs](http://inch-ci.org/github/piotrmurach/tty-cursor.svg?branch=master)][inchpages]
@@ -8,6 +9,7 @@
 [gitter]: https://gitter.im/piotrmurach/tty
 [gem]: http://badge.fury.io/rb/tty-cursor
 [travis]: http://travis-ci.org/piotrmurach/tty-cursor
+[appveyor]: https://ci.appveyor.com/project/piotrmurach/tty-cursor
 [codeclimate]: https://codeclimate.com/github/piotrmurach/tty-cursor
 [coverage]: https://coveralls.io/r/piotrmurach/tty-cursor
 [inchpages]: http://inch-ci.org/github/piotrmurach/tty-cursor
@@ -194,4 +196,4 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 
 ## Copyright
 
-Copyright (c) 2015-2016 Piotr Murach. See LICENSE for further details.
+Copyright (c) 2015-2017 Piotr Murach. See LICENSE for further details.
