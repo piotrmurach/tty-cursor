@@ -39,10 +39,6 @@ RSpec.describe TTY::Cursor do
     expect(cursor.down(5)).to eq("\e[5B")
   end
 
-  it "moves to line start" do
-    expect(cursor.move_start).to eq("\e[1000D")
-  end
-
   it "moves cursorleft by 1 line default" do
     expect(cursor.backward).to eq("\e[1D")
   end
