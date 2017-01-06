@@ -130,7 +130,7 @@ module TTY
     # Erase the entire current line and return to beginning of the line
     # @api public
     def clear_line
-      move_start + CSI + 'K'
+      move_start + CSI + '2K'
     end
 
     # Erase from the beginning of the line up to and including

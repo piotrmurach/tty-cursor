@@ -12,7 +12,7 @@ RSpec.describe TTY::Cursor, '#clear_lines' do
   end
 
   it "clears line" do
-    expect(cursor.clear_line).to eq("\e[1000D\e[K")
+    expect(cursor.clear_line).to eq("\e[1000D\e[2K")
   end
 
   it "clears the line before the cursor" do
@@ -25,21 +25,21 @@ RSpec.describe TTY::Cursor, '#clear_lines' do
 
   it "clears 5 lines up" do
     expect(cursor.clear_lines(5)).to eq([
-      "\e[1000D\e[K\e[1A",
-      "\e[1000D\e[K\e[1A",
-      "\e[1000D\e[K\e[1A",
-      "\e[1000D\e[K\e[1A",
-      "\e[1000D\e[K"
+      "\e[1000D\e[2K\e[1A",
+      "\e[1000D\e[2K\e[1A",
+      "\e[1000D\e[2K\e[1A",
+      "\e[1000D\e[2K\e[1A",
+      "\e[1000D\e[2K"
     ].join)
   end
 
   it "clears 5 lines down" do
     expect(cursor.clear_lines(5, :down)).to eq([
-      "\e[1000D\e[K\e[1B",
-      "\e[1000D\e[K\e[1B",
-      "\e[1000D\e[K\e[1B",
-      "\e[1000D\e[K\e[1B",
-      "\e[1000D\e[K"
+      "\e[1000D\e[2K\e[1B",
+      "\e[1000D\e[2K\e[1B",
+      "\e[1000D\e[2K\e[1B",
+      "\e[1000D\e[2K\e[1B",
+      "\e[1000D\e[2K"
     ].join)
   end
 
