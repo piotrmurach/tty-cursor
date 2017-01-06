@@ -15,6 +15,14 @@ RSpec.describe TTY::Cursor, '#clear_lines' do
     expect(cursor.clear_line).to eq("\e[1000D\e[K")
   end
 
+  it "clears the line before the cursor" do
+    expect(cursor.clear_line_before).to eq("\e[0K")
+  end
+
+  it "clears the line after the cursor" do
+    expect(cursor.clear_line_after).to eq("\e[1K")
+  end
+
   it "clears 5 lines up" do
     expect(cursor.clear_lines(5)).to eq([
       "\e[1000D\e[K\e[1A",
@@ -42,7 +50,6 @@ RSpec.describe TTY::Cursor, '#clear_lines' do
   it "clears screen up" do
     expect(cursor.clear_screen_up).to eq("\e[1J")
   end
-
 
   it "clears entire screen" do
     expect(cursor.clear_screen).to eq("\e[2J")

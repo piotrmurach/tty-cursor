@@ -133,6 +133,20 @@ module TTY
       move_start + ECMA_CSI + ECMA_CLR
     end
 
+    # Erase from the beginning of the line up to and including
+    # the current cursor position.
+    # @api public
+    def clear_line_before
+      ECMA_CSI + '0K'
+    end
+
+    # Erase from the current position (inclusive) to
+    # the end of the line
+    # @api public
+    def clear_line_after
+      ECMA_CSI + '1K'
+    end
+
     # Clear a number of lines
     #
     # @param [Integer] count
