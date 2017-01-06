@@ -121,7 +121,13 @@ module TTY
       ECMA_CSI + 'A' + ECMA_CSI + '1G'
     end
 
-    # Clear current line
+    # Erase n characters from the current cursor position
+    # @api public
+    def clear_char(n = nil)
+      ECMA_CSI + "#{n}X"
+    end
+
+    # Erase the entire current line and return to beginning of the line
     # @api public
     def clear_line
       move_start + ECMA_CSI + ECMA_CLR

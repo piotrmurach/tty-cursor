@@ -3,6 +3,14 @@
 RSpec.describe TTY::Cursor, '#clear_lines' do
   subject(:cursor) { described_class }
 
+  it "clears character" do
+    expect(cursor.clear_char).to eq("\e[X")
+  end
+
+  it "clears few characters" do
+    expect(cursor.clear_char(5)).to eq("\e[5X")
+  end
+
   it "clears line" do
     expect(cursor.clear_line).to eq("\e[1000D\e[K")
   end
