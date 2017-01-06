@@ -76,7 +76,7 @@ module TTY
     def up(n = nil)
       CSI + "#{(n || 1)}A"
     end
-    alias_method :cursor_up, :up
+    alias cursor_up up
 
     # Move the cursor down by n
     # @param [Integer] n
@@ -84,7 +84,7 @@ module TTY
     def down(n = nil)
       CSI + "#{(n || 1)}B"
     end
-    alias_method :cursor_down, :down
+    alias cursor_down down
 
     # Move the cursor backward by n
     # @param [Integer] n
@@ -92,7 +92,7 @@ module TTY
     def backward(n = nil)
       CSI + "#{n || 1}D"
     end
-    alias_method :cursor_backward, :backward
+    alias cursor_backward backward
 
     # Move the cursor forward by n
     # @param [Integer] n
@@ -100,7 +100,7 @@ module TTY
     def forward(n = nil)
       CSI + "#{n || 1}C"
     end
-    alias_method :cursor_forward, :forward
+    alias cursor_forward forward
 
     # Move cursor down to beginning of next line
     # @api public
@@ -154,7 +154,7 @@ module TTY
         acc << clear_line + ((i == n - 1) ? '' : dir)
       end
     end
-    alias_method :clear_rows, :clear_lines
+    alias clear_rows clear_lines
 
     # Clear screen down from current position
     # @api public
