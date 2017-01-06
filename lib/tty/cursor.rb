@@ -5,22 +5,22 @@ module TTY
   module Cursor
     module_function
 
-    ECMA_CSI = "\e[".freeze
+    ESC = "\e".freeze
+    CSI = "\e[".freeze
     DEC_RST  = 'l'.freeze
     DEC_SET  = 'h'.freeze
     DEC_TCEM = '?25'.freeze
-    ECMA_CLR = 'K'.freeze
 
     # Make cursor visible
     # @api public
     def show
-      ECMA_CSI + DEC_TCEM + DEC_SET
+      CSI + DEC_TCEM + DEC_SET
     end
 
     # Hide cursor
     # @api public
     def hide
-      ECMA_CSI + DEC_TCEM + DEC_RST
+      CSI + DEC_TCEM + DEC_RST
     end
 
     # Switch off cursor for the block
@@ -35,19 +35,19 @@ module TTY
     # Save current position
     # @api public
     def save
-      ECMA_CSI + 's'
+      CSI + 's'
     end
 
     # Restore cursor position
     # @api public
     def restore
-      ECMA_CSI + 'u'
+      CSI + 'u'
     end
 
     # Query cursor current position
     # @api public
     def current
-      ECMA_CSI + '6n'
+      CSI + '6n'
     end
 
     # Set the cursor absolute position
@@ -55,8 +55,8 @@ module TTY
     # @param [Integer] column
     # @api public
     def move_to(row = nil, column = nil)
-      return ECMA_CSI + 'H' if row.nil? && column.nil?
-      ECMA_CSI + "#{column + 1};#{row + 1}H"
+      return CSI + 'H' if row.nil? && column.nil?
+      CSI + "#{column + 1};#{row + 1}H"
     end
 
     # Move cursor relative to its current position
@@ -76,7 +76,7 @@ module TTY
     #
     # @api public
     def up(count = nil)
-      ECMA_CSI + "#{(count || 1)}A"
+      CSI + "#{(count || 1)}A"
     end
     alias_method :cursor_up, :up
 
@@ -86,7 +86,7 @@ module TTY
     #
     # @api public
     def down(count = nil)
-      ECMA_CSI + "#{(count || 1)}B"
+      CSI + "#{(count || 1)}B"
     end
     alias_method :cursor_down, :down
 
@@ -101,50 +101,50 @@ module TTY
     #   how far to go left
     # @api public
     def backward(count = nil)
-      ECMA_CSI + "#{count || 1}D"
+      CSI + "#{count || 1}D"
     end
     alias_method :cursor_backward, :backward
 
     # @api public
     def forward(count = nil)
-      ECMA_CSI + "#{count || 1}C"
+      CSI + "#{count || 1}C"
     end
     alias_method :cursor_forward, :forward
 
     # @api public
     def next_line
-      ECMA_CSI + 'E'
+      CSI + 'E'
     end
 
     # @api public
     def prev_line
-      ECMA_CSI + 'A' + ECMA_CSI + '1G'
+      CSI + 'A' + CSI + '1G'
     end
 
     # Erase n characters from the current cursor position
     # @api public
     def clear_char(n = nil)
-      ECMA_CSI + "#{n}X"
+      CSI + "#{n}X"
     end
 
     # Erase the entire current line and return to beginning of the line
     # @api public
     def clear_line
-      move_start + ECMA_CSI + ECMA_CLR
+      move_start + CSI + 'K'
     end
 
     # Erase from the beginning of the line up to and including
     # the current cursor position.
     # @api public
     def clear_line_before
-      ECMA_CSI + '0K'
+      CSI + '0K'
     end
 
     # Erase from the current position (inclusive) to
     # the end of the line
     # @api public
     def clear_line_after
-      ECMA_CSI + '1K'
+      CSI + '1K'
     end
 
     # Clear a number of lines
@@ -166,19 +166,19 @@ module TTY
     # Clear screen down from current position
     # @api public
     def clear_screen_down
-      ECMA_CSI + 'J'
+      CSI + 'J'
     end
 
     # Clear screen up from current position
     # @api public
     def clear_screen_up
-      ECMA_CSI + '1J'
+      CSI + '1J'
     end
 
     # Clear the screen with the background colour and moves the cursor to home
     # @api public
     def clear_screen
-      ECMA_CSI + '2J'
+      CSI + '2J'
     end
   end # Cursor
 end # TTY
