@@ -70,52 +70,45 @@ module TTY
       (y < 0 ? down(-y) : (y > 0 ? up(y) : ''))
     end
 
-    # Move cursor up by number of lines
-    #
-    # @param [Integer] count
-    #
+    # Move cursor up by n
+    # @param [Integer] n
     # @api public
-    def up(count = nil)
-      CSI + "#{(count || 1)}A"
+    def up(n = nil)
+      CSI + "#{(n || 1)}A"
     end
     alias_method :cursor_up, :up
 
-    # Move cursor down by number of lines
-    #
-    # @param [Integer] count
-    #
+    # Move the cursor down by n
+    # @param [Integer] n
     # @api public
-    def down(count = nil)
-      CSI + "#{(count || 1)}B"
+    def down(n = nil)
+      CSI + "#{(n || 1)}B"
     end
     alias_method :cursor_down, :down
 
-    # Move to start of the line
-    #
+    # Move the cursor backward by n
+    # @param [Integer] n
     # @api public
-    def move_start
-      backward(1000)
-    end
-
-    # @param [Integer] count
-    #   how far to go left
-    # @api public
-    def backward(count = nil)
-      CSI + "#{count || 1}D"
+    def backward(n = nil)
+      CSI + "#{n || 1}D"
     end
     alias_method :cursor_backward, :backward
 
+    # Move the cursor forward by n
+    # @param [Integer] n
     # @api public
-    def forward(count = nil)
-      CSI + "#{count || 1}C"
+    def forward(n = nil)
+      CSI + "#{n || 1}C"
     end
     alias_method :cursor_forward, :forward
 
+    # Move cursor down to beginning of next line
     # @api public
     def next_line
       CSI + 'E'
     end
 
+    # Move cursor up to beginning of previous line
     # @api public
     def prev_line
       CSI + 'A' + CSI + '1G'
@@ -130,7 +123,7 @@ module TTY
     # Erase the entire current line and return to beginning of the line
     # @api public
     def clear_line
-      move_start + CSI + '2K'
+      CSI + '2K' + CSI + '1G'
     end
 
     # Erase from the beginning of the line up to and including
@@ -149,16 +142,16 @@ module TTY
 
     # Clear a number of lines
     #
-    # @param [Integer] count
+    # @param [Integer] n
     #   the number of lines to clear
     # @param [Symbol] :direction
     #   the direction to clear, default :up
     #
     # @api public
-    def clear_lines(count, direction = :up)
-      count.times.reduce('') do |acc, i|
+    def clear_lines(n, direction = :up)
+      n.times.reduce('') do |acc, i|
         dir = direction == :up ? up : down
-        acc << clear_line + ((i == count - 1) ? '' : dir)
+        acc << clear_line + ((i == n - 1) ? '' : dir)
       end
     end
     alias_method :clear_rows, :clear_lines
