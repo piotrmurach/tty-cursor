@@ -40,27 +40,31 @@ Or install it yourself as:
 
 * [1. Usage](#1-usage)
 * [2. Interface](#2-interface)
-  * [2.1 Cursor control](#21-cursor-control)
+  * [2.1 Cursor Positioning](#21-cursor-positioning)
     * [2.1.1 move_to(x, y)](#211-move_tox-y)
     * [2.1.2 move(x, y)](#212-movex-y)
-    * [2.1.3 up(count)](#213-upcount)
-    * [2.1.4 down(count)](#214-downcount)
-    * [2.1.5 forward(count)](#215-forwardcount)
-    * [2.1.6 backward(count)](#216-backwardcount)
+    * [2.1.3 up(n)](#213-upn)
+    * [2.1.4 down(n)](#214-downn)
+    * [2.1.5 forward(n)](#215-forwardn)
+    * [2.1.6 backward(n)](#216-backwardn)
     * [2.1.7 save](#217-save)
     * [2.1.8 restore](#218-restore)
     * [2.1.9 current](#219-current)
     * [2.1.10 next_line](#2110-next_line)
     * [2.1.11 prev_line](#2111-prev_line)
-    * [2.1.12 show](#2112-show)
-    * [2.1.13 hide](#2113-hide)
-    * [2.1.14 invisible(stream)](#2114-invisiblestream)
-  * [2.2 Clearing text](#22-clearing-text)
-    * [2.2.1 clear_line](#221-clear_line)
-    * [2.2.2 clear_lines(count, direction)](#222-clear_linescount-direction)
-    * [2.2.3 clear_screen_down](#223-clear_screen_down)
-    * [2.2.4 clear_screen_up](#224-clear_screen_up)
-    * [2.2.5 clear_screen](#225-clear_screen)
+  * [2.2 Cursor Visibility](#22-cursor-visibility)
+    * [2.2.1 show](#221-show)
+    * [2.2.2 hide](#222-hide)
+    * [2.2.3 invisible(stream)](#2114-invisiblestream)
+  * [2.3 Text Manipulation](#23-text-manipulation)
+    * [2.3.1 clear_char](#231-clear_char)
+    * [2.3.2 clear_line](#232-clear_line)
+    * [2.3.3 clear_line_before](#233-clear_line)
+    * [2.3.4 clear_line_after](#234-clear_line)
+    * [2.3.5 clear_lines(n, direction)](#235-clear_linesn-direction)
+    * [2.3.6 clear_screen_down](#236-clear_screen_down)
+    * [2.3.7 clear_screen_up](#237-clear_screen_up)
+    * [2.3.8 clear_screen](#238-clear_screen)
 
 ## 1. Usage
 
@@ -84,7 +88,7 @@ print cursor.move(5, 2)
 
 ## 2. Interface
 
-### 2.1 Cursor control
+### 2.1 Cursor Positioning
 
 #### 2.1.1 move_to(x, y)
 
@@ -100,21 +104,21 @@ cursor.move_to
 
 Move cursor by x columns and y rows relative to its current position.
 
-#### 2.1.3 up(count)
+#### 2.1.3 up(n)
 
-Move the cursor up by `count` rows; the default count is `1`.
+Move the cursor up by `n` rows; the default n is `1`.
 
-#### 2.1.4 down(count)
+#### 2.1.4 down(n)
 
-Move the cursor down by `count` rows; the default count is `1`.
+Move the cursor down by `n` rows; the default n is `1`.
 
-#### 2.1.5 forward(count)
+#### 2.1.5 forward(n)
 
-Move the cursor forward by `count` columns; the default count is `1`.
+Move the cursor forward by `n` columns; the default n is `1`.
 
-#### 2.1.6 backward(count)
+#### 2.1.6 backward(n)
 
-Move the cursor backward by COUNT columns; the default count is `1`.
+Move the cursor backward by `n` columns; the default n is `1`.
 
 #### 2.1.7 save
 
@@ -130,23 +134,27 @@ Query current cursor position
 
 #### 2.1.10 next_line
 
-Move the cursor to the next line.
+Move the cursor down to the beginning of the next line.
 
 #### 2.1.11 prev_line
 
-Move the cursor to the previous line.
+Move the cursor up to the beginning of the previous line.
 
-#### 2.1.12 show
+### 2.2 Cursor Visibility
 
-Show cursor
+The following methods control the visibility of the cursor.
 
-#### 2.1.13 hide
+#### 2.2.1 show
 
-Hide cursor
+Show the cursor.
 
-#### 2.1.14 invisible(stream)
+#### 2.2.2 hide
 
-To hide cursor for the duration of the block do:
+Hide the cursor.
+
+#### 2.2.3 invisible(stream)
+
+To hide the cursor for the duration of the block do:
 
 ```ruby
 cursor.invisible { ... }
@@ -158,31 +166,45 @@ By default standard output will be used but you can change that by passing a dif
 cursor.invisible($stderr) { .... }
 ```
 
-### 2.2 Clearing text
+### 2.3 Text Modification
 
-#### 2.2.1 clear_line
+All methods in this section provide APIs to modify text buffer contents.
 
-Erase the entire current line.
+#### 2.3.1 clear_char(n)
 
-#### 2.2.2 clear_lines(count, direction)
+Erase `<n>` characters from the current cursor position by overwritting them with space character.
 
-Erase `count` rows in given direction; the default direction is `:up`.
+#### 2.3.2 clear_line
+
+Erase the entire current line and return cursor to beginning of the line.
+
+#### 2.3.3 clear_line_before
+
+Erase from the beginning of the line up to and including the current position.
+
+#### 2.3.4 clear_line_after
+
+Erase from the current position (inclusive) to the end of the line/display.
+
+#### 2.3.5 clear_lines(n, direction)
+
+Erase `n` rows in given direction; the default direction is `:up`.
 
 ```ruby
 cursor.clear_lines(5, :down)
 ```
 
-#### 2.2.3 clear_screen_down
+#### 2.3.6 clear_screen
+
+Erase the screen with the background colour and moves the cursor to home.
+
+#### 2.3.7 clear_screen_down
 
 Erase the screen from the current line down to the bottom of the screen.
 
-#### 2.2.4 clear_screen_up
+#### 2.3.8 clear_screen_up
 
 Erase the screen from the current line up to the top of the screen.
-
-#### 2.2.5 clear_screen
-
-Erase the screen with the background colour and moves the cursor to home.
 
 ## Contributing
 
