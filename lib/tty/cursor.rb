@@ -102,6 +102,12 @@ module TTY
     end
     alias cursor_forward forward
 
+    # Cursor moves to nth position horizontally in the current line
+    # @api public
+    def horizontal(n = nil)
+      CSI + "#{n || 1}G"
+    end
+
     # Move cursor down to beginning of next line
     # @api public
     def next_line

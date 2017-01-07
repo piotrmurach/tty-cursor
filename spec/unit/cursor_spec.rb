@@ -55,6 +55,14 @@ RSpec.describe TTY::Cursor do
     expect(cursor.forward(5)).to eq("\e[5C")
   end
 
+  it "moves cursor horizontal to start" do
+    expect(cursor.horizontal).to eq("\e[1G")
+  end
+
+  it "moves cursor horizontally to 66th position" do
+    expect(cursor.horizontal(66)).to eq("\e[66G")
+  end
+
   it "moves cursor to next line" do
     expect(cursor.next_line).to eq("\e[E")
   end
