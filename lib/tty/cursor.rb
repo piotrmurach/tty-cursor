@@ -117,7 +117,7 @@ module TTY
     # Move cursor up to beginning of previous line
     # @api public
     def prev_line
-      CSI + 'A' + CSI + '1G'
+      CSI + 'A' + horizontal(1)
     end
 
     # Erase n characters from the current cursor position
@@ -129,7 +129,7 @@ module TTY
     # Erase the entire current line and return to beginning of the line
     # @api public
     def clear_line
-      CSI + '2K' + CSI + '1G'
+      CSI + '2K' + horizontal(1)
     end
 
     # Erase from the beginning of the line up to and including
