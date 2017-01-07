@@ -111,7 +111,7 @@ module TTY
     # Move cursor down to beginning of next line
     # @api public
     def next_line
-      CSI + 'E'
+      CSI + 'E' + horizontal(1)
     end
 
     # Move cursor up to beginning of previous line

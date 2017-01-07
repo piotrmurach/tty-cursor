@@ -64,7 +64,7 @@ RSpec.describe TTY::Cursor do
   end
 
   it "moves cursor to next line" do
-    expect(cursor.next_line).to eq("\e[E")
+    expect(cursor.next_line).to eq("\e[E\e[1G")
   end
 
   it "moves cursor to previous line" do
