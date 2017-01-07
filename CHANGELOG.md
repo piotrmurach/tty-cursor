@@ -1,5 +1,22 @@
 # Change log
 
+## [v0.4.0] - 2017-01-xx
+
+### Added
+* Add #clear_char for erasing characters
+* Add #clear_line_before for erasing line before the cursor
+* Add #clear_line_after for erasing line after the cursor
+* Add #horizontal to move the cursor horizontally in the current line
+
+### Changed
+* Remove #move_start
+* Change #next_line to move the cursor to beginning of the line
+* Change #clear_line to move the cursor to beginning of the line
+* Change alias_method to alias
+
+### Fixed
+* Fix #clear_line to correctly clear whole line
+
 ## [v0.3.0] - 2016-05-21
 
 ### Fixed
@@ -14,6 +31,7 @@
 
 * Initial implementation and release
 
+[v0.4.0]: https://github.com/peter-murach/tty-cursor/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/peter-murach/tty-cursor/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/peter-murach/tty-cursor/compare/v0.1.0...v0.2.0
 [v0.1.0]: https://github.com/peter-murach/tty-cursor/compare/v0.1.0
