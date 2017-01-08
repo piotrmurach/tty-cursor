@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = TTY::Cursor::VERSION
   spec.authors       = ["Piotr Murach"]
   spec.email         = [""]
-  spec.summary       = %q{Terminal cursor movement and manipulation of cursor properties such as visibility.}
-  spec.description   = %q{The purpose of this library is to help move terminal cursor around using intuitive commands and help in clearing terminal screen.}
+  spec.summary       = %q{Terminal cursor positioning, visibility and text manipulation.}
+  spec.description   = %q{The purpose of this library is to help move the terminal cursor around and manipulate text by using intuitive method calls.}
   spec.homepage       = 'http://piotrmurach.github.io/tty/'
   spec.license       = "MIT"
 
