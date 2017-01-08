@@ -1,12 +1,13 @@
 # Change log
 
-## [v0.4.0] - 2017-01-xx
+## [v0.4.0] - 2017-01-08
 
 ### Added
 * Add #clear_char for erasing characters
 * Add #clear_line_before for erasing line before the cursor
 * Add #clear_line_after for erasing line after the cursor
-* Add #horizontal to move the cursor horizontally in the current line
+* Add #column to move the cursor horizontally in the current line
+* Add #row to move the cursor vertically in the current column
 
 ### Changed
 * Remove #move_start
