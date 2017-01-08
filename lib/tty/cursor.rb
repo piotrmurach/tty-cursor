@@ -103,21 +103,31 @@ module TTY
     alias cursor_forward forward
 
     # Cursor moves to nth position horizontally in the current line
+    # @param [Integer] n
+    #   the nth aboslute position in line
     # @api public
-    def horizontal(n = nil)
+    def column(n = nil)
       CSI + "#{n || 1}G"
+    end
+
+    # Cursor moves to the nth position vertically in the current column
+    # @param [Integer] n
+    #   the nth absolute position in column
+    # @api public
+    def row(n = nil)
+      CSI + "#{n || 1}d"
     end
 
     # Move cursor down to beginning of next line
     # @api public
     def next_line
-      CSI + 'E' + horizontal(1)
+      CSI + 'E' + column(1)
     end
 
     # Move cursor up to beginning of previous line
     # @api public
     def prev_line
-      CSI + 'A' + horizontal(1)
+      CSI + 'A' + column(1)
     end
 
     # Erase n characters from the current cursor position
@@ -129,7 +139,7 @@ module TTY
     # Erase the entire current line and return to beginning of the line
     # @api public
     def clear_line
-      CSI + '2K' + horizontal(1)
+      CSI + '2K' + column(1)
     end
 
     # Erase from the beginning of the line up to and including
