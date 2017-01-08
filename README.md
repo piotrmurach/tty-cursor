@@ -14,9 +14,9 @@
 [coverage]: https://coveralls.io/r/piotrmurach/tty-cursor
 [inchpages]: http://inch-ci.org/github/piotrmurach/tty-cursor
 
-> Terminal cursor movement and manipulation of cursor properties such as visibility.
+> Terminal cursor positioning, visibility and text manipulation.
 
-The purpose of this library is to help move terminal cursor around using intuitive commands and help in clearing terminal screen.
+The purpose of this library is to help move the terminal cursor around and manipulate text by using intuitive method calls.
 
 **TTY::Cursor** provides independent cursor movement component for [TTY](https://github.com/piotrmurach/tty) toolkit.
 
@@ -56,8 +56,8 @@ Or install it yourself as:
     * [2.2.1 show](#221-show)
     * [2.2.2 hide](#222-hide)
     * [2.2.3 invisible(stream)](#2114-invisiblestream)
-  * [2.3 Text Manipulation](#23-text-manipulation)
-    * [2.3.1 clear_char](#231-clear_char)
+  * [2.3 Text Modification](#23-text-modification)
+    * [2.3.1 clear_char(n)](#231-clear_charn)
     * [2.3.2 clear_line](#232-clear_line)
     * [2.3.3 clear_line_before](#233-clear_line)
     * [2.3.4 clear_line_after](#234-clear_line)
