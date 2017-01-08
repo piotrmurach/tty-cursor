@@ -47,11 +47,13 @@ Or install it yourself as:
     * [2.1.4 down(n)](#214-downn)
     * [2.1.5 forward(n)](#215-forwardn)
     * [2.1.6 backward(n)](#216-backwardn)
-    * [2.1.7 save](#217-save)
-    * [2.1.8 restore](#218-restore)
-    * [2.1.9 current](#219-current)
-    * [2.1.10 next_line](#2110-next_line)
-    * [2.1.11 prev_line](#2111-prev_line)
+    * [2.1.7 column(n)](#217-columnn)
+    * [2.1.8 row(n)](#218-rown)
+    * [2.1.9 next_line](#219-next_line)
+    * [2.1.10 prev_line](#2110-prev_line)
+    * [2.1.11 save](#2111-save)
+    * [2.1.12 restore](#2112-restore)
+    * [2.1.13 current](#2113-current)
   * [2.2 Cursor Visibility](#22-cursor-visibility)
     * [2.2.1 show](#221-show)
     * [2.2.2 hide](#222-hide)
@@ -96,6 +98,10 @@ print cursor.clear_line
 
 ### 2.1 Cursor Positioning
 
+All methods in this section allow to position the cursor around the terminal viewport.
+
+Cursor movement will be bounded by the current viewport into the buffer. Scrolling (if available) will not occur.
+
 #### 2.1.1 move_to(x, y)
 
 Set the cursor absolute position where subsequent text will begin.
@@ -126,25 +132,33 @@ Move the cursor forward by `n` columns; the default n is `1`.
 
 Move the cursor backward by `n` columns; the default n is `1`.
 
-#### 2.1.7 save
+#### 2.1.7 column(n)
 
-Save current cursor position.
+Cursor moves to `<n>`th position horizontally in the current line.
 
-#### 2.1.8 restore
+#### 2.1.8 row(n)
 
-Restore cursor position after a save cursor was called.
+Cursor moves the the `<n>`th position vertically in the current column.
 
-#### 2.1.9 current
-
-Query current cursor position
-
-#### 2.1.10 next_line
+#### 2.1.9 next_line
 
 Move the cursor down to the beginning of the next line.
 
-#### 2.1.11 prev_line
+#### 2.1.10 prev_line
 
 Move the cursor up to the beginning of the previous line.
+
+#### 2.1.11 save
+
+Save current cursor position.
+
+#### 2.1.12 restore
+
+Restore cursor position after a save cursor was called.
+
+#### 2.1.13 current
+
+Query current cursor position
 
 ### 2.2 Cursor Visibility
 
