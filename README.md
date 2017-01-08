@@ -74,16 +74,22 @@ Or install it yourself as:
 cursor = TTY::Cursor
 ```
 
-and then to move cursor 5 rows up and 2 columns forward do:
+and to move the cursor current position by 5 rows up and 2 columns right do:
 
 ```ruby
 print cursor.up(5) + cursor.forward(2)
 ```
 
-or simple call `move` to move cursor relative to current position:
+or call `move` to move cursor relative to current position:
 
 ```ruby
 print cursor.move(5, 2)
+```
+
+to remove text from the current line do:
+
+```ruby
+print cursor.clear_line
 ```
 
 ## 2. Interface
