@@ -1,5 +1,10 @@
 # Change log
 
+## [v0.5.0] - 2017-08-01
+
+### Changed
+* Change #save & #restore to work on major systems by Austin Blatt[@austb]
+
 ## [v0.4.0] - 2017-01-08
 
 ### Added
@@ -32,6 +37,7 @@
 
 * Initial implementation and release
 
+[v0.5.0]: https://github.com/peter-murach/tty-cursor/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/peter-murach/tty-cursor/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/peter-murach/tty-cursor/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/peter-murach/tty-cursor/compare/v0.1.0...v0.2.0
