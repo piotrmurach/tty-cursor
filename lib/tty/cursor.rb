@@ -1,4 +1,5 @@
 # encoding: utf-8
+# frozen_string_literal: true
 
 module TTY
   # Terminal cursor movement ANSI codes
@@ -35,13 +36,13 @@ module TTY
     # Save current position
     # @api public
     def save
-      Gem.win_platform? ? CSI + 's' : ESC + "7"
+      Gem.win_platform? ? CSI + 's' : ESC + '7'
     end
 
     # Restore cursor position
     # @api public
     def restore
-      Gem.win_platform? ? CSI + 'u' : ESC + "8"
+      Gem.win_platform? ? CSI + 'u' : ESC + '8'
     end
 
     # Query cursor current position
@@ -165,10 +166,10 @@ module TTY
     #
     # @api public
     def clear_lines(n, direction = :up)
-      n.times.reduce('') do |acc, i|
+      n.times.reduce([]) do |acc, i|
         dir = direction == :up ? up : down
         acc << clear_line + ((i == n - 1) ? '' : dir)
-      end
+      end.join
     end
     alias clear_rows clear_lines
 
