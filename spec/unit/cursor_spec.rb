@@ -12,10 +12,22 @@ RSpec.describe TTY::Cursor do
   end
 
   it "saves cursor position" do
+    expect(cursor.save).to eq("\e7")
+  end
+
+  it "saves cursor position on Windows" do
+    allow(Gem).to receive(:win_platform?).and_return(true)
+
     expect(cursor.save).to eq("\e[s")
   end
 
   it "restores cursor position" do
+    expect(cursor.restore).to eq("\e8")
+  end
+
+  it "restores cursor position on Windows" do
+    allow(Gem).to receive(:win_platform?).and_return(true)
+
     expect(cursor.restore).to eq("\e[u")
   end
 
