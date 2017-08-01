@@ -35,17 +35,13 @@ module TTY
     # Save current position
     # @api public
     def save
-      return CSI + 's' if Gem.win_platform?
-
-      ESC + "7"
+      Gem.win_platform? ? CSI + 's' : ESC + "7"
     end
 
     # Restore cursor position
     # @api public
     def restore
-      return CSI + 'u' if Gem.win_platform?
-
-      ESC + "8"
+      Gem.win_platform? ? CSI + 'u' : ESC + "8"
     end
 
     # Query cursor current position
