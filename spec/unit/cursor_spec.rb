@@ -12,6 +12,8 @@ RSpec.describe TTY::Cursor do
   end
 
   it "saves cursor position" do
+    allow(Gem).to receive(:win_platform?).and_return(false)
+
     expect(cursor.save).to eq("\e7")
   end
 
