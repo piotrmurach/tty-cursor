@@ -147,14 +147,14 @@ module TTY
     # the current cursor position.
     # @api public
     def clear_line_before
-      CSI + '0K'
+      CSI + '1K'
     end
 
     # Erase from the current position (inclusive) to
     # the end of the line
     # @api public
     def clear_line_after
-      CSI + '1K'
+      CSI + '0K'
     end
 
     # Clear a number of lines

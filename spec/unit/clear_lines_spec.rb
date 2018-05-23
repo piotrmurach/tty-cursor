@@ -16,11 +16,11 @@ RSpec.describe TTY::Cursor, '#clear_lines' do
   end
 
   it "clears the line before the cursor" do
-    expect(cursor.clear_line_before).to eq("\e[0K")
+    expect(cursor.clear_line_before).to eq("\e[1K")
   end
 
   it "clears the line after the cursor" do
-    expect(cursor.clear_line_after).to eq("\e[1K")
+    expect(cursor.clear_line_after).to eq("\e[0K")
   end
 
   it "clears 5 lines up" do
