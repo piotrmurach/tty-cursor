@@ -104,7 +104,7 @@ Cursor movement will be bounded by the current viewport into the buffer. Scrolli
 
 #### 2.1.1 move_to(x, y)
 
-Set the cursor absolute position where subsequent text will begin.
+Set the cursor absolute position to `x` and `y` coordinate, where `x` is the column of the `y` line.
 
 If no row/column parameters are provided, the cursor will move to the home position, at the upper left of the screen:
 
@@ -238,4 +238,4 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 
 ## Copyright
 
-Copyright (c) 2015-2017 Piotr Murach. See LICENSE for further details.
+Copyright (c) 2015-2018 Piotr Murach. See LICENSE for further details.
