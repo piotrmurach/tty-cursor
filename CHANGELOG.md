@@ -1,5 +1,14 @@
 # Change log
 
+## [v0.6.0] - 2018-07-13
+
+### Changed
+* Remove encoding magic comments
+
+### Fixed
+* Fix #clear_line_before/after to use correct control symbols by Xinyue Lu(@msg7086)
+* Fix gem vendoring by moving version file to its own folder
+
 ## [v0.5.0] - 2017-08-01
 
 ### Changed
