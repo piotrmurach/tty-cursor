@@ -1,5 +1,6 @@
-# encoding: utf-8
 # frozen_string_literal: true
+
+require_relative 'cursor/version'
 
 module TTY
   # Terminal cursor movement ANSI codes
