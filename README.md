@@ -62,7 +62,7 @@ Or install it yourself as:
   * [2.2 Cursor Visibility](#22-cursor-visibility)
     * [2.2.1 show](#221-show)
     * [2.2.2 hide](#222-hide)
-    * [2.2.3 invisible(stream)](#2114-invisiblestream)
+    * [2.2.3 invisible(stream)](#223-invisiblestream)
   * [2.3 Text Modification](#23-text-modification)
     * [2.3.1 clear_char(n)](#231-clear_charn)
     * [2.3.2 clear_line](#232-clear_line)
