@@ -1,1 +1,1 @@
-require 'tty/cursor'
+require_relative 'tty/cursor'
