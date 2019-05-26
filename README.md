@@ -63,7 +63,7 @@ Or install it yourself as:
     * [2.2.1 show](#221-show)
     * [2.2.2 hide](#222-hide)
     * [2.2.3 invisible(stream)](#223-invisiblestream)
-  * [2.3 Text Modification](#23-text-modification)
+  * [2.3 Text Clearing](#23-text-clearing)
     * [2.3.1 clear_char(n)](#231-clear_charn)
     * [2.3.2 clear_line](#232-clear_line)
     * [2.3.3 clear_line_before](#233-clear_line_before)
@@ -72,6 +72,9 @@ Or install it yourself as:
     * [2.3.6 clear_screen_down](#236-clear_screen_down)
     * [2.3.7 clear_screen_up](#237-clear_screen_up)
     * [2.3.8 clear_screen](#238-clear_screen)
+  * [2.4 Scrolling](#24-scrolling)
+    * [2.4.1 scroll_down](#241-scroll_down)
+    * [2.4.2 scroll_up](#242-scroll_up)
 
 ## 1. Usage
 
@@ -191,7 +194,7 @@ By default standard output will be used but you can change that by passing a dif
 cursor.invisible($stderr) { .... }
 ```
 
-### 2.3 Text Modification
+### 2.3 Text Clearing
 
 All methods in this section provide APIs to modify text buffer contents.
 
@@ -230,6 +233,17 @@ Erase the screen from the current line down to the bottom of the screen.
 #### 2.3.8 clear_screen_up
 
 Erase the screen from the current line up to the top of the screen.
+
+### 2.4 Scrolling
+
+#### 2.4.1 scroll_down
+
+Scroll display down one line.
+
+### 2.4.2 scroll_up
+
+Scroll display up one line.
+
 
 ## Contributing
 
