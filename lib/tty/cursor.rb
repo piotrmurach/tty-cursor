@@ -191,5 +191,17 @@ module TTY
     def clear_screen
       CSI + '2J'
     end
+
+    # Scroll display up one line
+    # @api public
+    def scroll_up
+      ESC + 'M'
+    end
+
+    # Scroll display down one line
+    # @api public
+    def scroll_down
+      ESC + 'D'
+    end
   end # Cursor
 end # TTY
