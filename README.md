@@ -146,7 +146,7 @@ Cursor moves to `<n>`th position horizontally in the current line.
 
 #### 2.1.8 row(n)
 
-Cursor moves the the `<n>`th position vertically in the current column.
+Cursor moves to the `<n>`th position vertically in the current column.
 
 #### 2.1.9 next_line
 
@@ -200,7 +200,7 @@ All methods in this section provide APIs to modify text buffer contents.
 
 #### 2.3.1 clear_char(n)
 
-Erase `<n>` characters from the current cursor position by overwritting them with space character.
+Erase `<n>` characters from the current cursor position by overwriting them with space character.
 
 #### 2.3.2 clear_line
 
