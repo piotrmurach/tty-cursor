@@ -1,5 +1,10 @@
 # Change log
 
+## [v0.7.1] - 2020-01-25
+
+### Changed
+* Change gemspec to include metadata and remove test files
+
 ## [v0.7.0] - 2019-05-27
 
 ### Added
@@ -59,6 +64,7 @@
 
 * Initial implementation and release
 
+[v0.7.0]: https://github.com/piotrmurach/tty-cursor/compare/v0.7.0...v0.7.1
 [v0.7.0]: https://github.com/piotrmurach/tty-cursor/compare/v0.6.1...v0.7.0
 [v0.6.1]: https://github.com/piotrmurach/tty-cursor/compare/v0.6.0...v0.6.1
 [v0.6.0]: https://github.com/piotrmurach/tty-cursor/compare/v0.5.0...v0.6.0
