@@ -255,6 +255,10 @@ Scroll display up one line.
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+## Code of Conduct
+
+Everyone interacting in the Strings::Inflection project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/piotrmurach/tty-cursor/blob/master/CODE_OF_CONDUCT.md).
+
 ## Copyright
 
 Copyright (c) 2015 Piotr Murach. See LICENSE for further details.
