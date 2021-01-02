@@ -1,11 +1,11 @@
 <div align="center">
-  <a href="https://piotrmurach.github.io/tty" target="_blank"><img width="130" src="https://cdn.rawgit.com/piotrmurach/tty/master/images/tty.png" alt="tty logo" /></a>
+  <a href="https://ttytoolkit.org"><img width="130" src="https://github.com/piotrmurach/tty/raw/master/images/tty.png" alt="TTY Toolkit logo" /></a>
 </div>
 
 # TTY::Cursor [![Gitter](https://badges.gitter.im/Join%20Chat.svg)][gitter]
 
 [![Gem Version](https://badge.fury.io/rb/tty-cursor.svg)][gem]
-[![Build Status](https://secure.travis-ci.org/piotrmurach/tty-cursor.svg?branch=master)][travis]
+[![Actions CI](https://github.com/piotrmurach/tty-cursor/workflows/CI/badge.svg?branch=master)][gh_actions_ci]
 [![Build status](https://ci.appveyor.com/api/projects/status/4k7cd69jscwg7fl7?svg=true)][appveyor]
 [![Code Climate](https://codeclimate.com/github/piotrmurach/tty-cursor/badges/gpa.svg)][codeclimate]
 [![Coverage Status](https://coveralls.io/repos/piotrmurach/tty-cursor/badge.svg)][coverage]
@@ -13,7 +13,7 @@
 
 [gitter]: https://gitter.im/piotrmurach/tty
 [gem]: http://badge.fury.io/rb/tty-cursor
-[travis]: http://travis-ci.org/piotrmurach/tty-cursor
+[gh_actions_ci]: https://github.com/piotrmurach/tty-cursor/actions?query=workflow%3ACI
 [appveyor]: https://ci.appveyor.com/project/piotrmurach/tty-cursor
 [codeclimate]: https://codeclimate.com/github/piotrmurach/tty-cursor
 [coverage]: https://coveralls.io/r/piotrmurach/tty-cursor
