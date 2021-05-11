@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe TTY::Cursor, '#clear_lines' do
+RSpec.describe TTY::Cursor, "#clear_lines" do
   subject(:cursor) { described_class }
 
   it "clears character" do

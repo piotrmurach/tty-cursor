@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-RSpec.describe TTY::Cursor, '#move' do
+RSpec.describe TTY::Cursor, "#move" do
   subject(:cursor) { described_class }
 
   it "doesn't move for point (0, 0)" do
-    expect(cursor.move(0, 0)).to eq('')
+    expect(cursor.move(0, 0)).to eq("")
   end
 
   it "moves only to the right" do

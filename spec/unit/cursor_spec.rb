@@ -97,7 +97,17 @@ RSpec.describe TTY::Cursor do
 
   it "hides cursor for the duration of block call" do
     stream = StringIO.new
-    cursor.invisible(stream) { }
+    expect { |block|
+      cursor.invisible(stream, &block)
+    }.to yield_with_no_args
+    expect(stream.string).to eq("\e[?25l\e[?25h")
+  end
+
+  it "shows hidden cursor on failure inside a block" do
+    stream = StringIO.new
+    expect {
+      cursor.invisible(stream) { raise "boom" }
+    }.to raise_error("boom")
     expect(stream.string).to eq("\e[?25l\e[?25h")
   end
 end

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-RSpec.describe TTY::Cursor, '#move_to' do
+RSpec.describe TTY::Cursor, "#move_to" do
   subject(:cursor) { described_class }
 
   it "moves to home" do
-    expect(cursor.move_to). to eq("\e[H")
+    expect(cursor.move_to).to eq("\e[H")
   end
 
   it "moves to row and column" do
