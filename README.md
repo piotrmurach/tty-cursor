@@ -10,7 +10,7 @@
 [![Code Climate](https://codeclimate.com/github/piotrmurach/tty-cursor/badges/gpa.svg)][codeclimate]
 [![Coverage Status](https://coveralls.io/repos/piotrmurach/tty-cursor/badge.svg)][coverage]
 
-[gem]: http://badge.fury.io/rb/tty-cursor
+[gem]: https://badge.fury.io/rb/tty-cursor
 [gh_actions_ci]: https://github.com/piotrmurach/tty-cursor/actions/workflows/ci.yml
 [appveyor]: https://ci.appveyor.com/project/piotrmurach/tty-cursor
 [codeclimate]: https://codeclimate.com/github/piotrmurach/tty-cursor
