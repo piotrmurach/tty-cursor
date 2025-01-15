@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
       "source_code_uri"   => "https://github.com/piotrmurach/tty-cursor"
     }
   end
-  spec.files         = Dir["lib/**/*", "README.md", "CHANGELOG.md", "LICENSE.txt"]
+  spec.files         = Dir["lib/**/*", "sig/**/*", "README.md", "CHANGELOG.md", "LICENSE.txt"]
   spec.extra_rdoc_files = ["README.md", "CHANGELOG.md"]
   spec.bindir        = "exe"
   spec.require_paths = ["lib"]
