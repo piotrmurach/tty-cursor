@@ -7,13 +7,13 @@
 [![Gem Version](https://badge.fury.io/rb/tty-cursor.svg)][gem]
 [![Actions CI](https://github.com/piotrmurach/tty-cursor/actions/workflows/ci.yml/badge.svg)][gh_actions_ci]
 [![Build status](https://ci.appveyor.com/api/projects/status/4k7cd69jscwg7fl7?svg=true)][appveyor]
-[![Code Climate](https://codeclimate.com/github/piotrmurach/tty-cursor/badges/gpa.svg)][codeclimate]
+[![Maintainability](https://api.codeclimate.com/v1/badges/66b37f0f1a313bf0681a/maintainability)][codeclimate]
 [![Coverage Status](https://coveralls.io/repos/piotrmurach/tty-cursor/badge.svg)][coverage]
 
 [gem]: https://badge.fury.io/rb/tty-cursor
 [gh_actions_ci]: https://github.com/piotrmurach/tty-cursor/actions/workflows/ci.yml
 [appveyor]: https://ci.appveyor.com/project/piotrmurach/tty-cursor
-[codeclimate]: https://codeclimate.com/github/piotrmurach/tty-cursor
+[codeclimate]: https://codeclimate.com/github/piotrmurach/tty-cursor/maintainability
 [coverage]: https://coveralls.io/r/piotrmurach/tty-cursor
 
 > Terminal cursor positioning, visibility and text manipulation.
